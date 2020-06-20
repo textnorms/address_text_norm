@@ -162,22 +162,32 @@ class AddressTextGenerator():
 
         return input_text,applied_noises
 
-    @staticmethod
-    def parse_days_months_years(sample,sample_format):
-        if sample_format == 'DD/MM/YYYY':
-            day,month,year = sample.split('/')
-        elif sample_format == 'DD/MM':
-            day,month = sample.split('/')
-            year = None
-        elif sample_format == 'MM/YYYY':
-            day = None
-            month,year =sample.split('/')
-        else:
-            raise NotImplementedError(f'\
-                Format {sample_format} not implemented :(')
 
-        return day,month,year 
+    def generate_demo(self,logradouro,numero,complemento,
+                bairro,cidade,uf,cep):
+        '''
+            Generates a demo for all the text forms
+            contained in the class for a given address.
+        '''        
+        methods = []
+        generated_texts = []
+        targets = []
 
+        for method_id,address_text_gen_method in address_formats_dicts[self.language].items():
+        
+            methods.append(method_id)
+            
+            sample, target = address_text_gen_method(logradouro,numero,complemento,
+                bairro,cidade,uf,cep)
+            
+            generated_texts.append(sample)
+            targets.append(target)
+
+        dataset = pd.DataFrame(list(zip(methods,generated_texts,targets)),
+            columns=['Input Pattern','Generated Text','Origin Sample'])
+
+        return dataset
+    
     @staticmethod
     def sample_from_dict(dict_to_sample,n_samples=1):
         '''
