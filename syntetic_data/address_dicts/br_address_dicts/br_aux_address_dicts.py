@@ -3,6 +3,7 @@
     auxiliary dicts.    
 '''
 from collections import OrderedDict
+from random import randint
 
 '''
     Commom Brazilian Portuguese abbreviations used
@@ -54,3 +55,19 @@ br_states_dict = {
     'AL':'Alagoas',
     'AC':'Acre'
 }
+
+'''
+    Generates a complemento information with reasonable
+    informations
+'''
+complemento_list = [
+    f'Torre {randint(1,10)} - Apartamento {randint(1,200)}',
+    f'Torre {randint(1,10)}',
+    f'Apartamento {randint(1,200)}',
+    f'Sala {randint(1,200)}',
+    f'Torre {randint(1,10)} - Sala {randint(1,200)}',
+    f'Box {randint(1,100)}',
+    f'Loja {randint(1,100)}',
+    f'Bloco {randint(1,20)} - Sala {randint(1,200)}',
+    f'Hangar {randint(1,20)}'
+]
