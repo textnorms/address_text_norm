@@ -6,24 +6,6 @@ from collections import OrderedDict
 from random import randint
 
 '''
-    Commom Brazilian Portuguese abbreviations used
-    in addresses dict
-'''
-abbreviations_dict = {
-    'Rua':'R.',
-    'Avenida':'Av.',
-    'Travessa':'Tv.',
-    'Praça':'Pç.',
-    'Jardim':'Jd.',
-    'Cidade':'Cid.',
-    'Torre':'T.',
-    'Apartamento':'Apto.',
-    'São':'S.',
-    'Santo':'Sto.',
-    'Santa':'Sta.'
-}
-
-'''
     Brazilian states abbreviations and complete names
 '''
 br_states_dict = {

@@ -17,3 +17,29 @@ lookalike_chars = {
     '9':'g',
     'g':'9'
 }
+
+'''
+    Dict with most commom  pt_BR abbreviations 
+'''
+'''
+    Commom Brazilian Portuguese abbreviations used
+    in addresses dict
+'''
+abbreviations_dict = {
+    'Rua':'R.',
+    'Avenida':'Av.',
+    'Travessa':'Tv.',
+    'Praça':'Pç.',
+    'Jardim':'Jd.',
+    'Cidade':'Cid.',
+    'Torre':'T.',
+    'Apartamento':'Apto.',
+    'São':'S.',
+    'Santo':'Sto.',
+    'Santa':'Sta.',
+    'Vila':'Vl.',
+    'Rodovia':'Rod.',
+    'Parque':'Prq.',
+    'Sul':'S.',
+    'Condomínio':'Cond.',
+}
