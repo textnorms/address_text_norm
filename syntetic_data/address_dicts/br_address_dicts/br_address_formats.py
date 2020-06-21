@@ -207,7 +207,7 @@ def format18(logradouro,numero,complemento,bairro,cidade,uf,cep):
     '''
     complemento_text = complemento_generation()
 
-    target = f'{logradouro}, {numero}, {complemento_text} ,{bairro}, {cidade}, {uf}'
+    target = f'{logradouro}, {numero}, {complemento_text}, {bairro}, {cidade}, {uf}'
     sample = f'{uf}, {cidade}, {bairro}, {logradouro}, {numero}, {complemento_text}'
 
     return sample, target
@@ -255,7 +255,7 @@ def format22(logradouro,numero,complemento,bairro,cidade,uf,cep):
     '''
     complemento_text = complemento_generation()
 
-    target = f'{logradouro}, S/N, {complemento_text},{bairro}, {cidade}, {uf}'
+    target = f'{logradouro}, S/N, {complemento_text}, {bairro}, {cidade}, {uf}'
     sample = f'{logradouro}, {complemento_text},{bairro}, {cidade}, {uf}'
     
     return sample,target
