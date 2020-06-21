@@ -3,8 +3,8 @@
     como é o caso de erros de caracteres parecidos ou caracteres faltantes.
 '''
 
-from .noise_dicts import lookalike_chars
-from random import sample
+from .noise_dicts import lookalike_chars,abbreviations_dict
+from random import sample,shuffle
 from collections import OrderedDict
 
 def findAllOccurrences(s, ch):
@@ -116,6 +116,32 @@ def remove_char_noise(input_text,K):
     return "".join(input_text_as_list)
 
 
+def replace_with_abbreviations(input_text,K):
+    '''
+        This function replaces all the commom
+    '''
+    # Removes commas and splits all the words in the sentence
+
+    replacable_words = list(abbreviations_dict.keys())
+
+    shuffle(replacable_words)
+
+    out_text =  input_text
+
+    K = 0 
+    for word_index in replacable_words:
+        try:
+            out_text = out_text.replace(word_index,abbreviations_dict[word_index])
+            K_counter += 1
+        except:
+            continue
+
+        if K_counter>K:
+            break
+    
+    return input_text
+
+
 '''
     This dict exports all the implemented noise
     functions implemented in this file for
@@ -124,5 +150,6 @@ def remove_char_noise(input_text,K):
 text_noise_dict = {
     'lookalike_replace_noise':lookalike_replace_noise,
     'unexpected_space_noise':unexpected_space_noise,
-    'remove_char_noise':remove_char_noise
+    'remove_char_noise':remove_char_noise,
+    'abbreviations_replace':replace_with_abbreviations
 }
