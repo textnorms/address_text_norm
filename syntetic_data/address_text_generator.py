@@ -74,7 +74,7 @@ class AddressTextGenerator():
         try:
             samples_base_df = pd.read_csv(address_csv_dict[self.language],header=0)
         except:
-            samples_base_df = pd.read_csv(address_csv_dict[f'address_text_norm/{self.language}'],
+            samples_base_df = pd.read_csv(f'address_text_norm/{address_csv_dict[self.language]}',
                 header=0)
 
         # Removing all samples with NaN values for a field 
