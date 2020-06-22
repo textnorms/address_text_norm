@@ -71,8 +71,11 @@ class AddressTextGenerator():
         '''
             Generates the dataset for all the supported formats            
         '''
-
-        samples_base_df = pd.read_csv(address_csv_dict[self.language],header=0)
+        try:
+            samples_base_df = pd.read_csv(address_csv_dict[self.language],header=0)
+        except:
+            samples_base_df = pd.read_csv(address_csv_dict[f'address_text_norm/{self.language}'],
+                header=0)
 
         # Removing all samples with NaN values for a field 
         samples_base_df.dropna(inplace=True)
